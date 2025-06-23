@@ -27,25 +27,6 @@ def main(data_folder, files):
     # 非数値データを除去
     cleaned_distances = {model_name: distances[np.isfinite(distances)] for model_name, distances in nearest_distances.items()}
 
-    # # KDEプロットを作成
-    # plt.figure(figsize=(12, 6))
-    # for model_name, distances in cleaned_distances.items():
-    #     sns.kdeplot(distances, label=model_name)
-    #
-    # # プロットの調整
-    # plt.title('Kernel Density Estimation of Nearest Neighbor Distances')
-    # plt.xlabel('Distance')
-    # plt.ylabel('Density')
-    # plt.xlim(0, 4)  # x軸の範囲を設定
-    # plt.legend(title='Model')
-    # plt.tight_layout()
-    #
-    # output_file_path = os.path.join(output_folder, f'kde_plot_data_GRU_NN.png')
-    # # ファイルに保存 (例: PNGファイルとして保存)
-    # plt.savefig(output_file_path, dpi=300, bbox_inches='tight')
-    #
-    # # プロットを表示
-    # plt.show()
 
     # KDEプロットの数值データを保存
     for model_name, distances in cleaned_distances.items():
